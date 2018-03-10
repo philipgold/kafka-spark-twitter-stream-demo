@@ -2,20 +2,19 @@
 [![Build Status](https://travis-ci.org/philipgold/topjava.svg?branch=master)](https://travis-ci.org/philipgold/kafka-spark-twitter-stream-demo)
 
 
-#Kafka Spark Twitter Stream Demo
+# Kafka Spark Twitter Stream Demo
 A demo project using Spark Streaming to analyze popular hashtags from the twitter data streams. The data comes from the Twitter Streaming API source and is fed to Kafka. The consumer service receives data from Kafka and then processes it in a stream using Spark Streaming.
 
 
-
-##Requirements
+## Requirements
 * Apache Maven 3.x
 * JVM 8
 * Docker machine
 * Registered an Twitter Application. The following guides may also be helpful: [How to create a Twitter application.](http://docs.inboundnow.com/guide/create-twitter-application/)
 
-##Quickstart guide
+## Quickstart guide
 1. Change Twitter configuration in `\twitter-producer\src\main\resources\application.properties`: 
-![alt text](https://twitter-producter-app-properies.png) 
+![twitter-producter-app-properies](https://github.com/philipgold/kafka-spark-twitter-stream-demo/raw/master/img/twitter-producter-app-properies.png) 
 
 2. Run docker-compose with following command: `docker-compose up -d`
 3. Check if ZooKeeper and Kafka is running (from command prompt)
@@ -30,4 +29,4 @@ $ cd twitter-producer
 $ mvn spring-boot:run
 ```
 You'll see results:
-![alt text](https://spark-consumer-console-results.png) 
+![spark-consumer-console-results](https://raw.githubusercontent.com/philipgold/kafka-spark-twitter-stream-demo/master/img/spark-consumer-console-results.png) 

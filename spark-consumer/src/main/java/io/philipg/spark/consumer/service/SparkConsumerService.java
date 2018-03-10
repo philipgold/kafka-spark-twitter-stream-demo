@@ -6,22 +6,15 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.streaming.Durations;
-import org.apache.spark.streaming.api.java.JavaDStream;
-import org.apache.spark.streaming.api.java.JavaInputDStream;
-import org.apache.spark.streaming.api.java.JavaStreamingContext;
-import org.apache.spark.streaming.kafka010.ConsumerStrategies;
-import org.apache.spark.streaming.kafka010.KafkaUtils;
-import org.apache.spark.streaming.kafka010.LocationStrategies;
+import org.apache.spark.streaming.api.java.*;
+import org.apache.spark.streaming.kafka010.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Service;
 import scala.Tuple2;
 
 import java.util.*;
-import java.util.regex.Pattern;
 
 @Service
 public class SparkConsumerService {
@@ -41,6 +34,7 @@ public class SparkConsumerService {
     }
 
     public void run(){
+        log.debug("Running Spark Consumer Service..");
 
         // Create context with a 10 seconds batch interval
         JavaStreamingContext jssc = new JavaStreamingContext(sparkConf, Durations.seconds(10));

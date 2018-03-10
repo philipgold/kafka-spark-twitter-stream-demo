@@ -2,17 +2,12 @@ package io.philipg.twitter.producer.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.social.twitter.api.*;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 
 @Service
 public class StreamTweetEventService {
@@ -59,16 +54,20 @@ public class StreamTweetEventService {
             }
 
             @Override
-            public void onWarning(StreamWarningEvent warningEvent) {
+            public void onDelete(StreamDeleteEvent deleteEvent) {
+                log.debug("onDelete");
             }
 
             @Override
             public void onLimit(int numberOfLimitedTweets) {
+                log.debug("onLimit");
             }
 
             @Override
-            public void onDelete(StreamDeleteEvent deleteEvent) {
+            public void onWarning(StreamWarningEvent warningEvent) {
+                log.debug("onLimit");
             }
+
         };
 
         //Start Stream when run a service

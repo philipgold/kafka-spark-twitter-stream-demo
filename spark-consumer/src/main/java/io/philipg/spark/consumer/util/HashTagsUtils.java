@@ -1,8 +1,7 @@
 package io.philipg.spark.consumer.util;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 public class HashTagsUtils {
     private static final Pattern HASHTAG_PATTERN = Pattern.compile("#\\w+");
