@@ -32,3 +32,11 @@ $ mvn spring-boot:run
 ```
 You'll see results:
 ![spark-consumer-console-results](https://raw.githubusercontent.com/philipgold/kafka-spark-twitter-stream-demo/master/img/spark-consumer-console-results.png) 
+
+## References
+* [Spring for Apache Kafka](https://projects.spring.io/spring-kafka/)
+* [Spring Social Twitter](http://projects.spring.io/spring-social-twitter/)
+* [Spark Overview](http://spark.apache.org/docs/latest/)
+* [Apache Kafka Documentation](http://kafka.apache.org/documentation.html)
+* [Big Data Processing with Apache Spark - Part 3: Spark Streaming](https://www.infoq.com/articles/apache-spark-streaming)
+* [Spring Kafka - Embedded Unit Test Example](https://www.codenotfound.com/spring-kafka-embedded-unit-test-example.html)

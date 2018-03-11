@@ -1,5 +1,6 @@
 package io.philipg.twitter.producer.service;
 
+import io.philipg.twitter.producer.util.HashTagsUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,10 +43,10 @@ public class StreamTweetEventService {
                     return;
                 }
 
-                Set<String> hashTags = hashTagsFromTweet(text);
+                Iterator<String> hashTags = HashTagsUtils.hashTagsFromTweet(text);
 
                 // filter tweets without hashTags:
-                if (hashTags.isEmpty()) {
+                if (!hashTags.hasNext()) {
                     return;
                 }
                 //Send tweet to Kafka topic
@@ -73,16 +74,5 @@ public class StreamTweetEventService {
         //Start Stream when run a service
         listeners.add(streamListener);
         twitter.streamingOperations().sample(listeners);
-    }
-
-    private static Set<String> hashTagsFromTweet(String text) {
-        Set<String> hashTags = new HashSet<>();
-        Matcher matcher = HASHTAG_PATTERN.matcher(text);
-        while (matcher.find()) {
-            String handle = matcher.group();
-            // removing '#' prefix
-            hashTags.add(handle.substring(1));
-        }
-        return hashTags;
     }
 }
