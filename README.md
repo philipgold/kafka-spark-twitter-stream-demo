@@ -1,5 +1,4 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bab2210534304c81b1f7e11b213b052e)](https://www.codacy.com/app/philipgold/kafka-spark-twitter-stream-demo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=philipgold/kafka-spark-twitter-stream-demo&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/philipgold/topjava.svg?branch=master)](https://travis-ci.org/philipgold/kafka-spark-twitter-stream-demo)
 
 
 # Kafka Spark Twitter Stream Demo
